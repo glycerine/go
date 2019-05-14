@@ -299,6 +299,10 @@ func LoadLocation(name string) (*Location, error) {
 			firstErr = err
 		}
 	}
+	// Critical for Windows, as an example. Try the embedded data.
+	if z, err := loadLocationEmbeddedFile(name); err == nil {
+		return z, nil
+	}
 	if z, err := loadLocation(name, zoneSources); err == nil {
 		return z, nil
 	} else if firstErr == nil {
