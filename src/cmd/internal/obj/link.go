@@ -503,6 +503,8 @@ type FuncInfo struct {
 
 	FuncInfoSym *LSym
 
+	WasmImportSym *LSym
+
 	WasmImport *WasmImport
 	WasmExport *WasmExport
 
@@ -644,6 +646,18 @@ func (wi *WasmImport) CreateAuxSym() {
 	wi.Write(&b)
 	p := b.Bytes()
 	wi.AuxSym = &LSym{
+		Type: objabi.SDATA, // doesn't really matter
+		P:    append([]byte(nil), p...),
+		Size: int64(len(p)),
+	}
+}
+
+func (wi *WasmImport) CreateSym(ctxt *Link) *LSym {
+	// TODO(jea) why is ctxt here, what should we be doing with it?
+	var b bytes.Buffer
+	wi.Write(&b)
+	p := b.Bytes()
+	return &LSym{
 		Type: objabi.SDATA, // doesn't really matter
 		P:    append([]byte(nil), p...),
 		Size: int64(len(p)),

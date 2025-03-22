@@ -272,7 +272,7 @@ var ArchWasm32 = &Arch{
 	Name:           "wasm32",
 	Family:         Wasm,
 	ByteOrder:      binary.LittleEndian,
-	PtrSize:        8,
+	PtrSize:        4,
 	RegSize:        8,
 	MinLC:          1,
 	Alignment:      1,
