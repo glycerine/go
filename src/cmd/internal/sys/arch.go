@@ -24,6 +24,7 @@ const (
 	RISCV64 = goarch.RISCV64
 	S390X   = goarch.S390X
 	Wasm    = goarch.WASM
+	Wasm32  = goarch.WASM32
 )
 
 // Arch represents an individual architecture.
