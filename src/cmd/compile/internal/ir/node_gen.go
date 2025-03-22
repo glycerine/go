@@ -1214,9 +1214,6 @@ func (n *InterfaceSwitchStmt) doChildrenWithHidden(do func(Node) bool) bool {
 	if n.Hash != nil && do(n.Hash) {
 		return true
 	}
-	if n.Hash != nil && do(n.Hash) {
-		return true
-	}
 	return false
 }
 func (n *InterfaceSwitchStmt) editChildren(edit func(Node) Node) {
