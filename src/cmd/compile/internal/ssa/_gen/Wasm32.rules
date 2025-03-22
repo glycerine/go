@@ -307,7 +307,7 @@
 (Move [7] dst src mem) =>
 	(I32Store [3] dst (I32Load [3] src mem)
 		(I32Store dst (I32Load src mem) mem))
-(Move [8] dst src mem) => 
+(Move [8] dst src mem) =>
 	(I32Store [4] dst (I32Load [4] src mem)
 		(I32Store dst (I32Load src mem) mem))
 
@@ -589,78 +589,78 @@
 
 (Add64 x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Add64Decomp 
+		(Select0 <typ.UInt32>
+			(Add64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Add64Decomp 
+		(Select1 <typ.UInt32>
+			(Add64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Sub64 x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Sub64Decomp 
+		(Select0 <typ.UInt32>
+			(Sub64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Sub64Decomp 
+		(Select1 <typ.UInt32>
+			(Sub64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Mul64 x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Mul64Decomp 
+		(Select0 <typ.UInt32>
+			(Mul64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Mul64Decomp 
+		(Select1 <typ.UInt32>
+			(Mul64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Div64 x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Div64Decomp 
+		(Select0 <typ.UInt32>
+			(Div64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Div64Decomp 
+		(Select1 <typ.UInt32>
+			(Div64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Div64u x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Div64uDecomp 
+		(Select0 <typ.UInt32>
+			(Div64uDecomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Div64uDecomp 
+		(Select1 <typ.UInt32>
+			(Div64uDecomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Mod64 x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Mod64Decomp 
+		(Select0 <typ.UInt32>
+			(Mod64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Mod64Decomp 
+		(Select1 <typ.UInt32>
+			(Mod64Decomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
 (Mod64u x y) =>
 	(Int64Make
-		(Select0 <typ.UInt32> 
-			(Mod64uDecomp 
+		(Select0 <typ.UInt32>
+			(Mod64uDecomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y)))
-		(Select1 <typ.UInt32> 
-			(Mod64uDecomp 
+		(Select1 <typ.UInt32>
+			(Mod64uDecomp
 				(Int64Hi x) (Int64Lo x)
 				(Int64Hi y) (Int64Lo y))))
 
