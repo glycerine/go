@@ -356,7 +356,6 @@ func NewConfig(arch string, types Types, ctxt *obj.Link, optimize, softfloat boo
 		c.FPReg = framepointerRegWasm32
 		c.LinkReg = linkRegWasm32
 		c.hasGReg = true
-		c.noDuffDevice = true
 		c.useAvg = false
 		c.useHmul = false
 	default:
