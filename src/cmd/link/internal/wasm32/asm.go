@@ -225,8 +225,8 @@ func asmb2(ctxt *ld.Link, ldr *loader.Loader) {
 		for ri := 0; ri < relocs.Count(); ri++ {
 			r := relocs.At(ri)
 			if r.Type() == objabi.R_WASMIMPORT {
-				if lsym, ok := ldr.WasmImportSym(fn); ok {
-					wi := readWasmImport(ldr, lsym)
+				if wsym := ldr.WasmImportSym(fn); wsym != 0 {
+					wi := readWasmImport(ldr, wsym)
 					hostImportMap[fn] = int64(len(hostImports))
 					hostImports = append(hostImports, &wasmFunc{
 						Module: wi.Module,
